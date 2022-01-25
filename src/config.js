@@ -1,14 +1,10 @@
 var config = {}
 
-config.port = "8080"
-// config.port = process.env.PORT
+config.port = process.env.PORT
+config.expire = process.env.EXPIRE // milisec
+config.db_uri = process.env.DB
 
-config.expire = 60 * 1000 // milisec
-
-config.db_uri = "mongodb://localhost:27017/urlshortener"
-// config.db_uri = "mongodb://mongo/urlshortener"
-
-config.db_user = ""
-config.db_pass = ""
+config.db_user = process.env.DB_USER
+config.db_pass = process.env.DB_PASS
 
 export default config

@@ -8,6 +8,7 @@ import redirect_router from './redirect.js'
 const app = express()
 app.use(express.json());
 
+
 // database config
 connection.once('open', () => console.log('DB connected'))
 connection.on('error', () => console.log('Error in DB connection'))

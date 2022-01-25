@@ -39,7 +39,7 @@ router.post('/url', async (req, res) => {
                     longUrl,
                     urlCode,
                     creationDate: new Date(),
-                    expirationDate: new Date(Date.now() + config.expire)
+                    expirationDate: new Date(Date.now() + parseInt(config.expire))
                 })
 
                 await url.save()

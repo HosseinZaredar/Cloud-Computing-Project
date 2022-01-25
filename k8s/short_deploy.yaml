@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: short
+  labels:
+    app: short
+spec:
+  replicas: 2
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      appli: short
+  template:
+    metadata:
+      labels:
+        appli: short
+    spec:
+      containers:
+      - name: short
+        imagePullPolicy: Never
+        image: short
+        ports:
+        - containerPort: 8080
+        env:
+          - name: PORT  
+            valueFrom:
+              configMapKeyRef:
+                name: short-config
+                key: PORT
+          - name: EXPIRE  
+            valueFrom:
+              configMapKeyRef:
+                name: short-config
+                key: EXPIRE
+          - name: DB 
+            valueFrom:
+              configMapKeyRef:
+                name: short-config
+                key: DB
+          - name: DB_USER
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: username
+          - name: DB_PASS
+            valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: password
