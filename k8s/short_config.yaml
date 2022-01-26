@@ -4,5 +4,5 @@ metadata:
   name: short-config
 data:
   PORT: "8080"
-  EXPIRE: "60000"
+  EXPIRE: "120000"
   DB: "mongo-service/urlshortener"

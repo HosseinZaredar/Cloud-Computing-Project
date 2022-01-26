@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mongo-vol
+  labels:
+    type: local
+spec:
+  storageClassName: standard
+  capacity:
+    storage: 250Mi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/Users/amin/Downloads/Cloud-main/data"
