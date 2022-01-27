@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: short-config
+data:
+  PORT: "8080"
+  EXPIRE: "120000"
+  DB: "mongo-service/urlshortener"
