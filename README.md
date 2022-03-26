@@ -13,6 +13,6 @@ We used K8s Auto Scaling mechanism to determine the number of running pods.
 4. Now you can send requests to the server like below:
 
 <p align="center">
-  <img height=70% width=70% src="images/post_req.png">
-  <img height=70% width=70% src="images/get_req.png">
+  <img height=90% width=90% src="images/post_req.png">
+  <img height=90% width=90% src="images/get_req.png">
 </p>
